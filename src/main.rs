@@ -136,4 +136,28 @@ fn main() {
 
     // let result: Result<i32, &str> = Err("error");
     // result.unwrap(); // panic
+
+    // function with Result
+    fn fetch_from_api() -> Result<i32, Error> {
+        // Err(Error)
+        Ok(200)
+    }
+    let res = fetch_from_api();
+    res.unwrap(); // panic on Err
+
+    let _ = fetch_from_api().expect("200"); // panic on Err
+
+    // Destructure
+    if let Ok(http_response) = fetch_from_api() {
+        println!("http_response = {}", http_response);
+    } else {
+        println!("error");
+    }
+
+    fn calling_function() -> Result<i32, Error> {
+        let res = fetch_from_api()?; // bubble up error
+        Ok(res)
+    }
+
+    let _ = calling_function().expect("200");
 }
