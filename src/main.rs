@@ -111,4 +111,13 @@ fn main() {
         (v1, v2)
     }
     let _ = generic_different_type(1, "test");
+
+    // define simple macro
+    macro_rules! add {
+        ($a:expr, $b:expr) => {
+            $a + $b
+        };
+    }
+    // use macro
+    let _ = add!(1, 2);
 }
