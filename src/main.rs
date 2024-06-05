@@ -67,4 +67,11 @@ fn main() {
 
     let _ = "test".len();
     let _ = str::len("test");
+
+    // catch all match
+    let _: &str = match 3 {
+        1 => "one",
+        2 => "two",
+        _ => "unknown",
+    };
 }
