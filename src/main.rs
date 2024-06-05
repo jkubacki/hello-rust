@@ -1,5 +1,5 @@
 fn main() {
-    let x;
-    x = 42;
+    let x: i32;
+    x = 512;
     println!("Hello, world! x = {}", x);
 }
