@@ -60,4 +60,11 @@ fn main() {
     let _ = some_struct.a;
     let _ = some_struct.b;
     let _ = some_struct.c;
+
+    // use library
+    use std::cmp::min;
+    let _ = min(1, 2);
+
+    let _ = "test".len();
+    let _ = str::len("test");
 }
