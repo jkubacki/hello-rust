@@ -3,6 +3,20 @@ fn add(a: i32, b: i32) -> i32 {
     a + b // ommit semi-colon for tail to return
 }
 
+fn return_1_or_2(return_2: bool) -> i32 {
+    if return_2 {
+        2
+    } else {
+        1
+    }
+}
+fn return_1_or_2_revamped(return_2: bool) -> i32 {
+    match return_2 {
+        true => 2,
+        false => 1,
+    }
+}
+
 fn main() {
     // variable
     let x: i32;
@@ -27,4 +41,25 @@ fn main() {
     };
 
     println!("block = {}", block);
+
+    // if
+    return_1_or_2(true);
+
+    // match
+    return_1_or_2_revamped(false);
+
+    // access values
+    let touple = (1, 2, 3);
+    let _ = touple.0;
+
+    // struct
+    struct SomeStruct {
+        a: i32,
+        b: i32,
+        c: i32,
+    }
+    let some_struct = SomeStruct { a: 1, b: 2, c: 3 };
+    let _ = some_struct.a;
+    let _ = some_struct.b;
+    let _ = some_struct.c;
 }
