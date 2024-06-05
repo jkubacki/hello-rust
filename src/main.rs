@@ -91,4 +91,24 @@ fn main() {
     // mutability
     // let mut number = 1;
     // number = 2;
+
+    // generic functions
+    fn generic<T>(value: T) -> T {
+        value
+    }
+
+    let _ = generic(1);
+    let _ = generic("test");
+
+    fn generic_same_type<T>(v1: T, v2: T) -> (T, T) {
+        (v1, v2)
+    }
+
+    let _ = generic_same_type(1, 2);
+    // let _ = generic_same_type(1, "test"); // mismatched types
+
+    fn generic_different_type<T, U>(v1: T, v2: U) -> (T, U) {
+        (v1, v2)
+    }
+    let _ = generic_different_type(1, "test");
 }
