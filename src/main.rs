@@ -120,4 +120,10 @@ fn main() {
     }
     // use macro
     let _ = add!(1, 2);
+
+    let something: Option<i32> = Some(1);
+    something.unwrap();
+
+    // let none: Option<i32> = None;
+    // none.unwrap(); // panic
 }
