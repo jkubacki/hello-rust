@@ -1,3 +1,5 @@
+use std::fmt::Error;
+
 fn main() {
     // variable
     let x: i32;
@@ -121,9 +123,17 @@ fn main() {
     // use macro
     let _ = add!(1, 2);
 
+    // unwrap, panic, option
     let something: Option<i32> = Some(1);
     something.unwrap();
 
     // let none: Option<i32> = None;
     // none.unwrap(); // panic
+
+    // Result, Ok, Err
+    let result: Result<i32, &str> = Ok(1);
+    result.unwrap();
+
+    // let result: Result<i32, &str> = Err("error");
+    // result.unwrap(); // panic
 }
