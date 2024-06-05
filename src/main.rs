@@ -74,4 +74,13 @@ fn main() {
         2 => "two",
         _ => "unknown",
     };
+
+    // methods
+    impl SomeStruct {
+        fn add(&self) -> i32 {
+            self.a + self.b + self.c
+        }
+    }
+    let result = some_struct.add();
+    println!("some_struct.add() = {}", result);
 }
