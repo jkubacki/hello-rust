@@ -83,4 +83,12 @@ fn main() {
     }
     let result = some_struct.add();
     println!("some_struct.add() = {}", result);
+
+    // immutability ❤️
+    // let number = 1;
+    // number = 2; // error
+
+    // mutability
+    // let mut number = 1;
+    // number = 2;
 }
