@@ -1,22 +1,3 @@
-fn add(a: i32, b: i32) -> i32 {
-    // return a + b;
-    a + b // ommit semi-colon for tail to return
-}
-
-fn return_1_or_2(return_2: bool) -> i32 {
-    if return_2 {
-        2
-    } else {
-        1
-    }
-}
-fn return_1_or_2_revamped(return_2: bool) -> i32 {
-    match return_2 {
-        true => 2,
-        false => 1,
-    }
-}
-
 fn main() {
     // variable
     let x: i32;
@@ -30,6 +11,10 @@ fn main() {
     println!("a = {}, b = {}", a, b);
 
     // function
+    fn add(a: i32, b: i32) -> i32 {
+        // return a + b;
+        a + b // ommit semi-colon for tail to return
+    }
     let result = add(1, 2);
     println!("result = {}", result);
 
@@ -43,9 +28,22 @@ fn main() {
     println!("block = {}", block);
 
     // if
+    fn return_1_or_2(return_2: bool) -> i32 {
+        if return_2 {
+            2
+        } else {
+            1
+        }
+    }
     return_1_or_2(true);
 
     // match
+    fn return_1_or_2_revamped(return_2: bool) -> i32 {
+        match return_2 {
+            true => 2,
+            false => 1,
+        }
+    }
     return_1_or_2_revamped(false);
 
     // access values
