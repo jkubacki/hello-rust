@@ -160,4 +160,43 @@ fn main() {
     }
 
     let _ = calling_function().expect("200");
+
+    // Iterators
+    let _natural_numbers = 1..; // infinite range, lazy
+
+    // Range
+    // 0 or greater
+    (0..).contains(&100); // true
+
+    // <= 20
+    (0..=20).contains(&20); // true
+
+    // 3, 4, 5
+    (3..6).contains(&6); // false
+
+    // iterate over vec!
+    let numbers = vec![1, 2, 3, 4, 5];
+    for number in numbers.iter() {
+        println!("vec num = {}", number);
+    }
+
+    // iterate over slice
+    let slice = &[52, 49, 21];
+    for number in slice.iter() {
+        println!("slice num = {}", number);
+    }
+
+    // iterate over iterator
+    for c in "rust".chars() {
+        println!("char = {}", c);
+    }
+
+    // functional stuff
+    for c in "ThiS Is CoOl"
+        .chars()
+        .filter(|c| c.is_lowercase())
+        .flat_map(|c| c.to_uppercase())
+    {
+        println!("char = {}", c);
+    }
 }
